@@ -1,0 +1,6 @@
+.idea
+add-on/common/script.js
+browsergopass
+*.iml
+node_modules
+build
