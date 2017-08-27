@@ -2,5 +2,8 @@
 add-on/common/script.js
 browsergopass
 *.iml
+*.ipr
+*.iws
+*.swp
 node_modules
 build

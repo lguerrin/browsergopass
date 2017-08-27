@@ -3,9 +3,26 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 APP_NAME="com.lguerrin.browsergopass"
-TARGET_DIR_CHROME="$HOME/Library/Application Support/Google/Chrome/NativeMessagingHosts"
-TARGET_DIR_FIREFOX="$HOME/Library/Application Support/Mozilla/NativeMessagingHosts"
-HOST_FILE="$DIR/browsergopass-wrapper"
+
+OS=`uname -s`
+case ${OS} in
+    Linux)
+        TARGET_DIR_CHROME="/etc/opt/chrome/native-messaging-hosts"
+        TARGET_DIR_FIREFOX="/usr/lib/mozilla/native-messaging-hosts"
+        HOST_FILE="$DIR/browsergopass"
+
+        ;;
+    Darwin)
+        TARGET_DIR_CHROME="$HOME/Library/Application Support/Google/Chrome/NativeMessagingHosts"
+        TARGET_DIR_FIREFOX="$HOME/Library/Application Support/Mozilla/NativeMessagingHosts"
+        HOST_FILE="$DIR/browsergopass-wrapper"
+        ;;
+    *)
+        echo "Cannot install on $OS"
+        exit 1
+    ;;
+esac
+
 # Escape host file
 ESCAPED_HOST_FILE=${HOST_FILE////\\/}
 
