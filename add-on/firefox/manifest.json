@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "browsergopass",
+  "description": "Browsergppass Chrome extension for gopass (password manager).",
+  "version": "0.1",
+  "author": "Loïc Guerrin",
+  "homepage_url": "https://github.com/lguerrin/browsergopass",
+  "browser_action": {
+    "default_icon": "lock-black-48.png",
+    "default_popup": "main.html"
+  },
+  "permissions": [
+    "activeTab",
+    "nativeMessaging",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "applications": {
+    "gecko": {
+      "id": "browsergopass@guerrin.com"
+    }
+  }
+}

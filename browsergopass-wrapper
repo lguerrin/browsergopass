@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Add some path to PATH on MacOS
+
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+export GPG_TTY="$(tty)"
+export PATH="$PATH:/usr/local/bin"
+$DIR/browsergopass "$@"
+exit $?
