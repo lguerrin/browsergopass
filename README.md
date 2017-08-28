@@ -5,7 +5,12 @@ It's a browser plugin to populate login from from credentials stored via gopass
 
 ## Installation
 
-Not ready... 
+* Download the last release, and unarchive it where you want
+* Execute the install.sh (sudo on Linux)
+
+And next load the extension from your browser:
+* The XPI file for Firefox
+* The CRX file for Chrome  
 
 ## How build and test
 

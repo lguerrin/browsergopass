@@ -4,7 +4,7 @@ build-go:
 	go build
 
 build-browserify:
-	browserify add-on/common/script.browserify.js -o add-on/common/script.js
+	browserify src/common/script.browserify.js -o src/common/script.js
 
 build-ext:
 	./build-ext.sh

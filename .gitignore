@@ -1,5 +1,5 @@
 .idea
-add-on/common/script.js
+src/common/script.js
 browsergopass
 *.iml
 *.ipr
