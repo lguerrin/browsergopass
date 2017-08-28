@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "browsergopass",
-  "description": "Browsergppass Firefox extension for gopass (password manager).",
+  "description": "Browsergopass Firefox extension for gopass (password manager).",
   "version": "0.1",
   "author": "Loïc Guerrin",
   "homepage_url": "https://github.com/lguerrin/browsergopass",
