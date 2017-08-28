@@ -11,3 +11,6 @@ build-ext:
 
 install:
 	./install.sh
+
+release:
+	./release.sh

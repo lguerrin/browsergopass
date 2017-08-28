@@ -7,3 +7,4 @@ browsergopass
 *.swp
 node_modules
 build
+releases/*

@@ -11,30 +11,13 @@ RELEASE_PATH="$DIR/releases/browsergopass"
 
 
 
-cd build
 for BROWSER in $BROWSERS; do
     cp $DIR/src/$BROWSER/host.json $DIR/releases/host-$BROWSER.json
 
-    cd $BROWSER
-    case ${BROWSER} in
-        chrome)
-            EXT="crx"
-            zip ../browsergopass.$EXT *
-            ;;
-        firefox)
-            EXT="xpi"
-            ;;
-        *)
-            echo "Cannot handle browser $BROWSER"
-            exit 1
-        ;;
-    esac
-   cd ..
+    cp add-on/browsergopass*.crx releases/browsergopass.crx
+    cp add-on/browsergopass*.xpi releases/browsergopass.xpi
 done
 
-cd ..
-
-mv build/browsergopass* releases/
 
 if [ ! -f "releases/browsergopass.crx" ]; then
     echo "Missing chrome extension..."
