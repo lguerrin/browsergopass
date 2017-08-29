@@ -2,15 +2,22 @@
 
 It's a browser plugin to populate login from from credentials stored via gopass
 
+![Plugin](docs/plugin.png)
 
 ## Installation
 
 * Download the last release, and unarchive it where you want
 * Execute the install.sh (sudo on Linux)
 
-And next load the extension from your browser:
-* The XPI file for Firefox
-* The CRX file for Chrome  
+The native app is installed. Next you need intall the plugins
+
+### Chrome
+
+Drag and dropthe XPI file to the extension page  
+
+### Chrome
+
+Drag and dropthe CRX file to the extension page
 
 ## How build and test
 
@@ -18,6 +25,11 @@ You need to install:
  * gopass
  * go
  * npm
+ 
+ And run:
+ ```bash
+npm install -g browserify  
+ ```
  
  and next you can download sources and run:
 ```bash
