@@ -4,6 +4,13 @@ It's a browser plugin to populate login from from credentials stored via gopass
 
 ![Plugin](docs/plugin.png)
 
+##Limitation
+
+The last part of the key must be the login and the file must contains only the password
+```
+gopass insert <domain>/<login> 
+```
+
 ## Installation
 
 * Download the last release, and unarchive it where you want
