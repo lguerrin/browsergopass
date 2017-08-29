@@ -18,7 +18,7 @@ gopass insert <domain>/<login>
 
 The native app is installed. Next you need intall the plugins
 
-### Chrome
+### Firefox
 
 Drag and dropthe XPI file to the extension page  
 
