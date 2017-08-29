@@ -39,7 +39,7 @@ for PLATFORM in $PLATFORMS; do
 
 
     cd releases
-    cp ../browsergopass-wrapper browsergopass.crx browsergopass.xpi install.sh host*.json  browsergopass/
+    cp ../browsergopass-wrapper ../LICENSE browsergopass.crx browsergopass.xpi install.sh host*.json  browsergopass/
     tar -zcvf browsergopass-$PLATFORM-$ARCH.tar.gz browsergopass
     cd ../
     rm -rf $RELEASE_PATH
