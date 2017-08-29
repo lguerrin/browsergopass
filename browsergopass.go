@@ -90,7 +90,12 @@ func search(domain string) ([]string, error) {
 		return nil, err
 	}
 
-	return delete_empty(strings.Split(out.String(), "\n")), nil
+	value := out.String()
+	if(len(value) < 1) {
+		return []string{}, nil
+	}
+
+	return delete_empty(strings.Split(value, "\n")), nil
 }
 
 func readLogin(key string) (*Credentials, error) {
