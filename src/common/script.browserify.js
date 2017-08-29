@@ -82,6 +82,13 @@ function init(tab) {
         return;
     }
 
+    if(tab.url.startsWith("about:")) {
+        //Handle firefox tabs
+        return;
+    }
+
+    console.log(tab.url);
+
     activeTab = tab;
     var activeDomain = parseDomainFromUrl(tab.url);
     searchPassword(activeDomain);
