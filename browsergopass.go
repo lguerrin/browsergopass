@@ -82,17 +82,21 @@ func Run(stdin io.Reader, stdout io.Writer) error {
 }
 
 func search(domain string) ([]string, error) {
-	search := exec.Command(gopass, "search", domain)
+	cmd := exec.Command(gopass, "search", domain)
 	var out bytes.Buffer
-	search.Stdout = &out
-	err := search.Run()
+	cmd.Stdout = &out
+	err := cmd.Run()
 	if err != nil {
 		return nil, err
 	}
 
 	value := out.String()
-	if(len(value) < 1) {
-		return []string{}, nil
+	if len(value) < 1 {
+		if domain == RootDomain(domain) {
+			return []string{}, nil
+		} else {
+			return search(RootDomain(domain))
+		}
 	}
 
 	return delete_empty(strings.Split(value, "\n")), nil
@@ -146,4 +150,14 @@ func UsernameFromKey(name string) string {
 		return filepath.Base(name)
 	}
 	return ""
+}
+
+func RootDomain(domain string) string {
+	splitted := strings.Split(domain, ".")
+	length := len(splitted)
+	if length <= 2 {
+		return domain
+	} else {
+		return splitted [length-2] + "." + splitted[length-1]
+	}
 }
