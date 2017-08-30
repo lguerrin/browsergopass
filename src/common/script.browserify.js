@@ -24,9 +24,9 @@ function view() {
         results = m('div.loader');
     } else if( logins !== null ) {
         if( typeof(logins) === "undefined" ) {
-            results = m('div.status-text', "Cannot find host application");
+            results = m('div.status-text', "Error with native app.");
         } else if( logins.length === 0 ) {
-            results = m('div.status-text',  m.trust(`No passwords found for <strong>${domain}</strong>.`));
+            results = m('div.status-text',  m.trust(`No password found for <strong>${domain}</strong>.`));
         } else if( logins.length > 0 ) {
             results = logins.map(function(l) {
                 var faviconUrl = getFaviconUrl(domain);
