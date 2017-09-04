@@ -8,6 +8,9 @@ case ${OS} in
     Linux)
         TARGET_DIR_CHROME="$HOME/.config/google-chrome/NativeMessagingHosts"
         TARGET_DIR_FIREFOX="$HOME/.mozilla/native-messaging-hosts/"
+        TARGET_DIR_CHROMIUM="$HOME/.config/chromium/NativeMessagingHosts"
+
+
         HOST_FILE="$DIR/browsergopass"
 
         if [ -z `hash firefox` ]; then
@@ -25,6 +28,16 @@ case ${OS} in
                  mkdir -p "$TARGET_DIR_CHROME"
              fi
         fi
+
+        if [ -z `hash chromium-browser ` ]; then
+             echo "Detecting Chromium"
+             if [ ! -d "$TARGET_DIR_CHROMIUM" ]; then
+                 echo "Creates native app folder"
+                 mkdir -p "$TARGET_DIR_CHROMIUM"
+             fi
+        fi
+
+
 
         ;;
     Darwin)
@@ -53,4 +66,10 @@ if [ -d "$TARGET_DIR_FIREFOX" ]; then
     sed -i -e "s/%%replace%%/$ESCAPED_HOST_FILE/" "$TARGET_DIR_FIREFOX/$APP_NAME.json"
 fi
 
-echo "Now, you can add plugins to browsers."
+if [ -d "$TARGET_DIR_CHROMIUM" ]; then
+    echo "Installing app for chromium"
+    cp "host-firefox.json" "$TARGET_DIR_CHROMIUM/$APP_NAME.json"
+    sed -i -e "s/%%replace%%/$ESCAPED_HOST_FILE/" "$TARGET_DIR_CHROMIUM/$APP_NAME.json"
+fi
+
+echo "Now, you can add plugin to browsers."
