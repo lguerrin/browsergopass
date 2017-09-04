@@ -14,7 +14,7 @@ gopass insert <domain>/<login>
 ## Installation
 
 * Download the last release, and unarchive it where you want
-* Execute the install.sh (sudo on Linux)
+* Execute the install.sh
 
 The native app is installed. Next you need intall the plugins
 
